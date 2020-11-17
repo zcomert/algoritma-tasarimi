@@ -18,7 +18,7 @@ namespace Apps
                 Convert.ToInt32(Console.ReadLine());
 
             // fonksiyon sonucunu sonuc degiskeninde saklar. 
-            bool sonuc = TekMi(n);
+            bool sonuc = TekMi(sayi);
             
             // Sonucu ekrana yazar. 
             Console.WriteLine($"Tek mi? {sonuc}");
