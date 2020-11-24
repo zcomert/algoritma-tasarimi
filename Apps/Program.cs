@@ -41,6 +41,16 @@ namespace Apps
             else
                 return false;
         }
+
+        private static void NKadarYazdir(int n=5)
+        {
+            Console.WriteLine();
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write($"{i,-3}");
+            }
+            Console.WriteLine();
+        }
         
 
         
