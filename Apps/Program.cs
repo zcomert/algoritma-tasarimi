@@ -10,12 +10,6 @@ namespace Apps
     {
         static void Main(string[] args)
         {
-            int[] X = new int[] { -5, 10, -20, 30, -23 };
-            for (int i = 0; i < X.Length; i++)
-            {
-                X[i] = MutlakDeger(X[i]);
-                Console.WriteLine(X[i]);
-            }
             Console.ReadKey();
         }
         public static int MutlakDeger(int n)
@@ -82,6 +76,40 @@ namespace Apps
 
             Console.ReadKey();
         }
+        private static void KokBulma(float a, float b, float c)
+        {
+            float delta = b * b - (4 * a * c);
+            float kokDelta = (float)Math.Sqrt(delta);
+
+
+            if (delta > 0)
+            {
+                Console.WriteLine("İki farklı kök vardır. ");
+
+                Console.Write("Birinci kök : ");
+                float kok1 = (-b + kokDelta) / (2 * a);
+                Console.WriteLine(kok1);
+
+                Console.Write("İkinci kök : ");
+                float kok2 = (-b - kokDelta) / (2 * a);
+                Console.WriteLine(kok2);
+                Console.ReadLine();
+            }
+            else if (delta == 0)
+            {
+                Console.Write("Bir çift kök vardır. ");
+                float kok = -b / 2 * a;
+                Console.WriteLine(kok);
+
+            }
+            else
+            {
+                Console.WriteLine("Reel kök yoktur. ");
+            }
+            Console.ReadLine();
+        }
+
         #endregion
     }
-}
+
+}   
