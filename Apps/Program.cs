@@ -10,6 +10,8 @@ namespace Apps
     {
         static void Main(string[] args)
         {
+            int[] Seri = new int[] { 3, 5, 7, 10, 12 };
+            SeriYazdir(Seri);
             Console.ReadKey();
         }
         public static int MutlakDeger(int n)
@@ -18,7 +20,7 @@ namespace Apps
                 n = -n;
             return n;
         }
-        #region Ornekler
+       
         private static void TekCiftSayiOrnegi()
         {
             // ekran cikti verir. 
@@ -37,11 +39,7 @@ namespace Apps
             // Klavyeden bir tusa basılması bekler. 
             Console.ReadKey();
         }
-        /// <summary>
-        /// Parametre olarak aldgini sayinin tek mi yoksa cift mi oldugunu kontrol eder.
-        /// </summary>
-        /// <param name="n">Sayi temsil eder.</param>
-        /// <returns>true/false</returns>
+        
         private static bool TekMi(int n)
         {
             // Kosul ifadesini degerlendirir. Kosul dogru if blogu 
@@ -51,6 +49,7 @@ namespace Apps
             else
                 return false;
         }
+        
         private static void NKadarYazdir(int n=5)
         {
             Console.WriteLine();
@@ -60,22 +59,18 @@ namespace Apps
             }
             Console.WriteLine();
         }
+        
         private static void MutlakDegerOrnegi()
         {
             int n = Convert
                 .ToInt32(Console.ReadLine());
 
             if (n >= 0)
-            {
                 Console.WriteLine(n);
-            }
             else
-            {
                 Console.WriteLine(-n);
-            }
-
-            Console.ReadKey();
         }
+        
         private static void KokBulma(float a, float b, float c)
         {
             float delta = b * b - (4 * a * c);
@@ -109,7 +104,75 @@ namespace Apps
             Console.ReadLine();
         }
 
-        #endregion
+        public static double AritmetikOrtalama(double[] Seri)
+        {
+            double toplam = 0;
+            foreach (var item in Seri)
+                toplam += item;
+            return toplam / Seri.Length;
+        }
+
+        public static int Faktoriyel(int n)
+        {
+            if (n <= 1)
+                return 1;
+            else
+                return n * Faktoriyel(n - 1);
+        }
+
+        public static int UsAlma(int taban, int kuvvet)
+        {
+            int sonuc = 1, sayac=1;
+            while (sayac<=kuvvet)
+            {
+                sonuc *= taban;
+                sayac += 1;
+            }
+            return sonuc;
+        }
+
+        public static int EnBuyukBul (int[] Seri)
+        {
+            int enBuyuk = Seri[0];
+            for (int i = 1; i < Seri.Length; i++)
+            {
+                if (Seri[i] > enBuyuk)
+                    enBuyuk = Seri[i];
+            }
+            return enBuyuk;
+        }
+
+        public static int EnKucukBul(int[] Seri)
+        {
+            int enKucuk = Seri[0];
+            for (int i = 1; i < Seri.Length; i++)
+            {
+                if (Seri[i] < enKucuk)
+                    enKucuk = Seri[i];
+            }
+            return enKucuk;
+        }
+
+        public static int Bul(int[] Seri, int aranan)
+        {
+            for (int i = 0; i < Seri.Length; i++)
+            {
+                if (Seri[i]==aranan)
+                    return i;
+            }
+            return -1;
+        }
+
+        public static void SeriYazdir(int[] Seri)
+        {
+            Console.WriteLine();
+            foreach (var item in Seri)
+                Console.WriteLine($"{item,-5}");
+            Console.WriteLine();
+        }
+
+
+
     }
 
 }   
